@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <mrta name="description" content="Online Stopwatch">
+    <title>Online Stopwatch</title>
+    <link rel="icon" type="JPG" href="image/icon.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <button id="lightMode">Light Mode</button>
+    <main>
+        <header>
+            <h1 id="title">Stopwatch</h1>
+        </header>
+        <section>
+            <div id="counts">
+                <p id="allTime">
+                    <span id="allTimeMinutes">00</span>:
+                    <span id="allTimeSeconds">0</span>:
+                    <span id="allTimeTierce">00</span>
+                </p>
+                <p id="currentLap">
+                    <span id="currentLapMinutes">00</span>:
+                    <span id="currentLapSeconds">00</span>:
+                    <span id="currentLapTierce">00</span>
+                </p>
+                <div id="allButtons">
+                    <button class="button">Lap</button>
+                    <button class="button">Stop</button>
+                </div>
+            </div>
+            <hr>
+            <table id="allLaps">
+                <tr id="headerRow">
+                    <th>Position</th>
+                    <th>Lap Used Time</th>
+                    <th>Time Difference</th>
+                </tr>
+                <tr id="OtherRows">
+                    <td id="position">00</td>
+                    <td id="usedTimeIn">
+                        <p id="usedTimeInMinutes">00</p>:
+                        <p id="usedTimeInSeconds">00</p>:
+                        <p id="usedTimeInTierce">00</p>  
+                    </td>
+                    <td id="differenceIn">
+                        <p id="differenceInMinutes">00 </p>:
+                        <p id="differenceInSeconds">00</p>:
+                        <p id="differenceInTierce">00</p>   
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
