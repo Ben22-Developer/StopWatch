@@ -20,13 +20,13 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 body {
-    background-color: rgb(93, 141, 134);
+    background-color: rgb(169, 192, 188);
 }
 .darkVersion {
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     hr {
-        display: none;
+       
     }
 }
 #title {
@@ -37,7 +37,10 @@ body {
 }
 hr {
     width: 90%; 
+    height:.2rem;
+    border: none;
     margin: auto;
+    background-color: rgb(54, 70, 70);
 }
 #counts {
     text-align: center;

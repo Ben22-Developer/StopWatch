@@ -14,6 +14,8 @@ let usedTimeInMinutes = document.querySelector('#usedTimeInMinutes');
 let differenceIn = document.querySelector('#differenceIn');
 let differenceInMinutes = document.querySelector('#differenceInMinutes');
 let differenceInSeconds = document.querySelector('#differenceInSeconds');
+let function_1;//for general time
+let function_2;//for individual current laps
 let differenceInTierce = document.querySelector('#differenceInTierce')
 let lapTierce,lapSeconds,lapMinutes,iterateTierce,iterateSeconds,iterateMinutes,individualTierce,individualSeconds,individualMinutes,position_nbr;
 let newRow,newPosition,newlapUsedTime,newTimeDifference,newusedTimeInTierce,newusedTimeInSeconds,newusedTimeInMinutes,newTimeDifferenceInMinutes,newTimeDifferenceInSeconds,newTimeDifferenceInTierce;
@@ -57,7 +59,17 @@ let setIntervalFunction = () => {
 }
 allButtons.forEach((button,index) => {
     button.addEventListener('click',() => {
-        if (button.innerText === 'Stop') {
+        if (button.innerText === 'Start') {
+            button.innerText = 'Stop';
+            for (loop = 0; loop<allButtons.length; loop ++) {
+                if (allButtons[loop].classList.contains('hidden')) {
+                   allButtons[loop].classList.remove('hidden');
+                }
+            }
+        function_1 = setInterval(setIntervalFunction,10);
+        function_2 = setInterval(setIntervalFunction_2,10);
+        }
+        else if (button.innerText === 'Stop') {
             clearInterval(function_1);
             clearInterval(function_2);
             button.innerText = 'Resume';
@@ -132,6 +144,9 @@ allButtons.forEach((button,index) => {
             currentLapMinutes.innerText = lapMinutes;
         }
         else if (button.innerText === 'Reset') {
+            button.innerText = 'Lap';
+            button.classList.add('hidden');
+            allButtons[1].innerText = 'Start';
             resetFunction();
         }
     })
@@ -166,9 +181,6 @@ let setIntervalFunction_2 = () => {
         }
     }
 }
-let function_1 = setInterval(setIntervalFunction,10);//for general time
-let pause_function_1 = clearInterval(setIntervalFunction);
-let function_2 = setInterval(setIntervalFunction_2,10);//for individual current laps
 let individuallap = () => {
     if (position_nbr === 1) {
         if (individualTierce < 10) {
